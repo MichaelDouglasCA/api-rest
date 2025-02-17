@@ -1,50 +1,101 @@
-# API REST de Produtos
+Aqui está um modelo de `README.md` para o seu repositório:
 
-Este projeto é uma API REST simples construída com **Spring Boot** que gerencia uma entidade chamada **Produto**. A API possui endpoints para listar e adicionar produtos, com uma conexão ao banco de dados utilizando **Spring Data JPA**.
+```markdown
+# API REST com Spring Boot
+
+Este projeto é uma implementação de uma API REST simples utilizando **Spring Boot 3** com **Java 17**. A API permite gerenciar produtos, incluindo operações de listagem e adição de produtos. A API está documentada utilizando **Swagger** para facilitar o uso e testes.
 
 ## Tecnologias Utilizadas
 
-- **Java 17**
-- **Spring Boot 3.x**
-- **Spring Data JPA**
-- **Swagger UI (OpenAPI)**
-- **H2 Database (para testes locais)**
+- **Java 17**: Versão LTS mais recente da linguagem Java.
+- **Spring Boot 3**: Framework para desenvolvimento de aplicações Java com configuração automática.
+- **Spring Data JPA**: Acesso fácil e eficiente ao banco de dados.
+- **Swagger/OpenAPI**: Documentação automática da API.
+- **H2 Database (opcional)**: Banco de dados em memória para armazenar os dados dos produtos.
 
 ## Funcionalidades
 
-### Endpoints da API
+A API possui os seguintes endpoints:
 
-- **GET /api/produtos**: Lista todos os produtos cadastrados.
-- **POST /api/produtos**: Adiciona um novo produto à lista.
+### 1. **GET /api/produtos**
+   - Retorna uma lista de todos os produtos cadastrados na aplicação.
+   - **Exemplo de resposta**:
+     ```json
+     [
+       {
+         "id": 1,
+         "nome": "Produto Exemplo",
+         "preco": 29.99
+       }
+     ]
+     ```
 
-### Exemplo de Respostas:
+### 2. **POST /api/produtos**
+   - Permite adicionar um novo produto.
+   - **Exemplo de corpo de requisição**:
+     ```json
+     {
+       "nome": "Produto Novo",
+       "preco": 49.99
+     }
+     ```
+   - **Exemplo de resposta**:
+     ```json
+     {
+       "id": 2,
+       "nome": "Produto Novo",
+       "preco": 49.99
+     }
+     ```
 
-- **GET /api/produtos**:
-  - Retorno: Lista de produtos em formato JSON.
-  
-- **POST /api/produtos**:
-  - Corpo da requisição:
-    ```json
-    {
-      "nome": "Produto Exemplo",
-      "preco": 99.99
-    }
-    ```
-  - Resposta:
-    ```json
-    {
-      "id": 1,
-      "nome": "Produto Exemplo",
-      "preco": 99.99
-    }
-    ```
+## Como Executar o Projeto
 
-## Configuração do Projeto
+### Requisitos
 
-### Passo 1: Clonando o Repositório
+- **Java 17** ou superior.
+- **Maven** para gerenciamento de dependências e build.
 
-Clone o repositório em sua máquina local:
+### Passos para Executar
 
-```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/MichaelDouglasCA/api-rest.git
+   ```
+
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd api-rest
+   ```
+
+3. Execute o projeto:
+   - Com Maven Wrapper:
+     ```bash
+     .\mvnw spring-boot:run
+     ```
+
+4. A aplicação será executada localmente em `http://localhost:8080`.
+
+### Acessando a Documentação da API (Swagger)
+
+Após a aplicação estar rodando, você pode acessar a documentação da API no Swagger UI em:
+
+```
+http://localhost:8080/swagger-ui/
+```
+
+## Melhorias Futuras
+
+- **Autenticação**: Implementar autenticação e autorização com Spring Security.
+- **Validação de Dados**: Utilizar anotações como `@Valid` para validar os dados de entrada.
+- **Deploy**: Realizar o deploy da aplicação em plataformas como Railway ou Heroku.
+- **Banco de Dados Relacional**: Configurar um banco de dados relacional real (MySQL/PostgreSQL) ao invés de usar o banco em memória.
+
+## Contribuições
+
+Se você deseja contribuir com o projeto, fique à vontade para enviar um **Pull Request** ou abrir **Issues** com sugestões ou melhorias.
+
+---
+
+Feito com 💙 por [Michael Douglas](https://github.com/MichaelDouglasCA)
+```
+
